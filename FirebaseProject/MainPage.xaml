@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="FirebaseProject.MainPage">
+
+     <StackLayout  >  
+        <StackLayout Margin="20,0,20,0">  
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">  
+                <Image Margin="0,0,0,-20"  Source="firebase.jpg" ></Image>  
+                <Entry x:Name="txtName" Placeholder="Name"></Entry>  
+                <Entry x:Name="txtSurname" Placeholder="Surname"></Entry>  
+                <Grid HeightRequest="200" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>  
+                    <Button Grid.Row="0" Grid.Column="1" x:Name="btnRetrive" Text="Retrive" Clicked="BtnRetrive_Clicked"/>  
+                </Grid>
+
+                <ListView x:Name="lstPersons" SeparatorVisibility="None" ItemTapped="lstPersons_ItemTapped">  
+                    <ListView.ItemTemplate >  
+                        <DataTemplate>
+                            <ViewCell>
+                               <ViewCell.View>
+
+                         
+                                    <Grid RowSpacing="0">
+                                        <Label  Grid.Row="0"  Text="{Binding Name}" />
+                                        <Label  Grid.Row="1"  Text="{Binding Surname}"/>
+                                    </Grid>
+                                   </ViewCell.View>
+                                
+                               
+                            </ViewCell>
+                            <!--<TextCell Text="{Binding Name}" Detail="{Binding Surname}"></TextCell>-->  
+                        </DataTemplate>  
+                    </ListView.ItemTemplate>  
+                </ListView>  
+            </StackLayout>  
+        </StackLayout>  
+    </StackLayout>  
+
+    <!--<StackLayout>
+     <Button Text="Get List" Clicked="Button_Clicked"/>
+        <ListView x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Surname}"/>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>-->
+        
+</ContentPage>
