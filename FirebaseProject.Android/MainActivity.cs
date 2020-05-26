@@ -21,7 +21,7 @@ namespace FirebaseProject.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Device.SetFlags(new[] { "SwipeView_Experimental" });
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;  // it is so important to get permisson
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

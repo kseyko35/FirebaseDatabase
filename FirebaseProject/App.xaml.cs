@@ -10,7 +10,7 @@ namespace FirebaseProject
         {
             InitializeComponent();  // Used FirebaseDatabase.net plugin for all platform
 
-            MainPage = new MainPage();
+            MainPage = new RealTimePlayer();
         }
 
         protected override void OnStart()
