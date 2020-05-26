@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Firebase.Database;
-using FirebaseProject.Database;
 using FirebaseProject.Model;
 using Xamarin.Forms;
 

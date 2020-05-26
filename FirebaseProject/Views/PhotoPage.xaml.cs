@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
-using Firebase.Storage;
 using FirebaseProject.Database;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
-using Plugin.Permissions;
 using Xamarin.Forms;
 
 namespace FirebaseProject
@@ -23,7 +18,7 @@ namespace FirebaseProject
           
         }
 
-        async void onPickPhoto(System.Object sender, System.EventArgs e)
+        async void onPickPhoto(Object sender, EventArgs e)
         {
            await CrossMedia.Current.Initialize();
 
@@ -51,7 +46,7 @@ namespace FirebaseProject
 
         
 
-        void onStorePhoto(System.Object sender, System.EventArgs e)
+        void onStorePhoto(Object sender, EventArgs e)
         {
             firebaseHelper.StoreImages(file.GetStream());
         }
