@@ -52,16 +52,14 @@ namespace FirebaseProject.Database
               .PutAsync(new User() { Name = newName, Surname = surname });
         }
 
-        public async void StoreImages(Stream imageStream)
+        public async Task<string> StoreImages(Stream imageStream)
         {
-            var stroageImage = await new FirebaseStorage("xamarinfirst-440bf.appspot.com")
-                .Child("FirstImage")
-                .PutAsync(imageStream);
-            string imgurl = stroageImage;
-            if (imgurl.Contains("http"))
-            {
-                
-            }
+           return await new FirebaseStorage("xamarinfirst-440bf.appspot.com")
+                .Child("FirstImage/"+ FirebaseKeyGenerator.Next())
+                .PutAsync(imageStream);// Burada sadece fotograf upload islemi yapilmistir.
+            //Istenirse kullanci kayit olurken kullanicinin unique key alinip o unique key ile resim upload edilebilir
+            
+            
         }
         private void GetPlayer()
         {
@@ -72,10 +70,10 @@ namespace FirebaseProject.Database
             });
         }
 
-       // public ObservableCollection<Player> GetPlayer(){
-       //     var footballer = firebase.Child("player").AsObservable<Player>().AsObservableCollection<Player>();
-            
-       //     return footballer;
-       //}
+        // public ObservableCollection<Player> GetPlayer(){
+        //     var footballer = firebase.Child("player").AsObservable<Player>().AsObservableCollection<Player>();
+
+        //     return footballer;
+        //}
     }
 }

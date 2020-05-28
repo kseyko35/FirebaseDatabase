@@ -7,7 +7,13 @@
                 <Image Margin="0,0,0,-20"  Source="firebase.jpg" ></Image>  
                 <Entry x:Name="txtName" Placeholder="Name"></Entry>  
                 <Entry x:Name="txtSurname" Placeholder="Surname"></Entry>  
-                <Grid HeightRequest="200" >
+                <StackLayout Orientation="Horizontal">
+                    
+                    <Button HorizontalOptions="FillAndExpand" x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>  
+                    <Button HorizontalOptions="FillAndExpand" x:Name="btnRetrive" Text="Retrive" Clicked="BtnRetrive_Clicked"/>  
+                
+                </StackLayout>
+                <!--<Grid HeightRequest="200" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -19,7 +25,7 @@
 
                     <Button Grid.Row="0" Grid.Column="0" x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>  
                     <Button Grid.Row="0" Grid.Column="1" x:Name="btnRetrive" Text="Retrive" Clicked="BtnRetrive_Clicked"/>  
-                </Grid>
+                </Grid>-->
 
                 <ListView x:Name="lstPersons" SeparatorVisibility="None" ItemTapped="lstPersons_ItemTapped">  
                     <ListView.ItemTemplate >  

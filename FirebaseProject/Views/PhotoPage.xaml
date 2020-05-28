@@ -1,15 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FirebaseProject.PhotoPage">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="120"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Image  x:Name="imgView" Grid.ColumnSpan="2" />
-            <Button Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"  Text="Choose" Clicked="onPickPhoto"/>
-            <Button Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"  Text="Store" Clicked="onStorePhoto"/>
-    
-        </Grid>
+   
+            <Grid x:Name="mGridLayout" AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="1,1,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="120"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image x:Name="imgView" Grid.ColumnSpan="3" />
+                <Button Grid.Row="1"  VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"  Text="Pick Photo" Clicked="onPickPhoto"/>
+                <Button Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"  Text="Take Photo" Clicked="onTakePhoto"/>
+                <Button Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"  Text="Store" Clicked="onStorePhoto"/>
+                <ActivityIndicator x:Name="mIndicator" Grid.RowSpan="2" Grid.ColumnSpan="3" Color="CornflowerBlue" VerticalOptions="Center"
+                               HorizontalOptions="Center"  
+                             />
+            </Grid>
+
     </ContentPage.Content>
 </ContentPage>
